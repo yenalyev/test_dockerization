@@ -17,14 +17,14 @@
                 steps{
                     echo"===================start building image==============================="
                     sh 'mvn -B -DskipTests clean package'
-                    sh 'docker build .'
+                    sh 'docker -t demo build .'
                 }
             }
 
             stage("run docker image"){
                 steps{
                 echo"===================run docker image==============================="
-                sh 'docker run --name demo -p 8083:80 openjdk'
+                sh 'docker run --name test -p 8083:80 demo'
 
                 }
             }
