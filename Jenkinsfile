@@ -26,7 +26,7 @@
                 echo"===================run docker image==============================="
                 sh 'docker container rm -f test'
                 sh 'docker run --name test -p 8083:8080 demo'
-
+                echo"===================container run==============================="
                 }
             }
         }
