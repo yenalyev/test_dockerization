@@ -25,7 +25,7 @@
                 steps{
                 echo"===================run docker image==============================="
                 sh 'docker container rm -f test'
-                sh 'docker run --name test -p 8083:8080 demo'
+                sh 'docker run --name test -p 8083:8080 -d demo'
                 echo"===================container run==============================="
                 }
             }
