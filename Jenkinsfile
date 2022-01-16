@@ -17,7 +17,7 @@
                 steps{
                     echo"===================start building image==============================="
                     sh 'mvn -B -DskipTests clean package'
-                    sh 'docker -t demo build .'
+                    sh 'docker build -t demo .'
                 }
             }
 
