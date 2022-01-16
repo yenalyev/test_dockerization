@@ -24,7 +24,7 @@
             stage("run docker image"){
                 steps{
                 echo"===================run docker image==============================="
-                sh 'docker run --name test -p 8083:80 demo'
+                sh 'docker run --name test -p 8083:8080 demo'
 
                 }
             }
