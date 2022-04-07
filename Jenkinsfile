@@ -33,6 +33,7 @@
             stage("push docker image into docker hub"){
             steps{
             echo "===========================pulling docker image============================"
+            sh 'docker login -u maximen -p 22beacfa-2298-4c12-8431-49fa0fca2b32'
             sh 'docker push demo:latest'
             }
             }
