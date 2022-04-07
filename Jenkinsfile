@@ -7,10 +7,10 @@
 
         stages{
             stage('Initialize'){
-                        steps{
-                            echo "PATH = ${M2_HOME}/bin:${PATH}"
-                            echo "M2_HOME = /opt/maven"
-                        }
+               steps{
+                   echo "PATH = ${M2_HOME}/bin:${PATH}"
+                   echo "M2_HOME = /opt/maven"
+               }
             }
 
             stage("create docker image"){
@@ -21,13 +21,20 @@
                 }
             }
 
-            stage("run docker image"){
-                steps{
-                echo"===================run docker image==============================="
-                sh 'docker container rm -f test'
-                sh 'docker run --name test -p 8083:8080 -d demo'
-                echo"===================container run==============================="
-                }
+//             stage("run docker image"){
+//                 steps{
+//                     echo"===================run docker image==============================="
+//                     sh 'docker container rm -f test'
+//                     sh 'docker run --name test -p 8083:8080 -d demo'
+//                     echo"===================container run==============================="
+//                 }
+//             }
+
+            stage("push docker image into docker hub"){
+            steps{
+            echo "===========================pulling docker image============================"
+            sh 'docker push maximen/test-repo:latest'
+            }
             }
         }
     }
