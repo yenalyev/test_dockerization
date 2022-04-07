@@ -33,7 +33,7 @@
             stage("push docker image into docker hub"){
             steps{
             echo "===========================pulling docker image============================"
-            sh 'docker push maximen/test-repo:latest'
+            sh 'docker push test:latest'
             }
             }
         }
