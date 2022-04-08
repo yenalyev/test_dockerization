@@ -34,7 +34,7 @@
             steps{
             echo "===========================pushing docker image============================"
             sh 'docker login -u maximen -p 22beacfa-2298-4c12-8431-49fa0fca2b32'
-            sh 'docker image tag demo maximen/test:latest'
+            sh 'docker image tag demo maximen/test:test'
             sh 'docker push maximen/test:test'
             }
             }
